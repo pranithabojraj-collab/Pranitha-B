@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buyer Dashboard - Browse fresh produce and manage orders on AgroConnect">
+    <title>Buyer Dashboard - AgroConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌱</span>
+                <span>AgroConnect</span>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="farmer-dashboard.html" class="nav-link">Farmer Dashboard</a></li>
+                <li><a href="buyer-dashboard.html" class="nav-link active">Buyer Dashboard</a></li>
+                <li><a href="tracking.html" class="nav-link">Track Orders</a></li>
+                <li><a href="login.html" class="btn btn-primary btn-sm">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== BUYER DASHBOARD ===== -->
+    <div class="page dashboard active">
+        <aside class="sidebar slide-in">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🌱</span>
+                    <span>AgroConnect</span>
+                </div>
+                <span class="user-role" style="background-color: var(--color-info);">Buyer</span>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="#" class="sidebar-link active"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-shopping-cart"></i> Browse Produce</a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-clipboard-list"></i> My Orders</a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-heart"></i> Favorites</a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-users"></i> My Farmers</a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-bell"></i> Notifications</a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="index.html" class="sidebar-link"><i class="fas fa-home"></i> Back to Home</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header fade-in">
+                <h1 class="dashboard-title">Buyer Dashboard</h1>
+                <p>Welcome, Priya Sharma! Find fresh produce from verified farmers.</p>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-grid fade-in">
+                <div class="stat-card">
+                    <div class="stat-label">Total Orders</div>
+                    <div class="stat-value">24</div>
+                    <div class="stat-trend"><i class="fas fa-arrow-up"></i> 4 this month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Active Orders</div>
+                    <div class="stat-value">3</div>
+                    <div class="stat-trend">In transit</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Total Spent</div>
+                    <div class="stat-value">₹1,25,400</div>
+                    <div class="stat-trend"><i class="fas fa-arrow-down"></i> -5% this month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Saved Farmers</div>
+                    <div class="stat-value">12</div>
+                    <div class="stat-trend">Trusted partners</div>
+                </div>
+            </div>
+
+            <!-- Available Produce -->
+            <div class="data-table mt-xl fade-in">
+                <div class="table-header">
+                    <h3>Fresh Produce Available Now</h3>
+                    <div class="flex gap-md">
+                        <select class="form-select" style="width: 200px;">
+                            <option>All Categories</option>
+                            <option>Vegetables</option>
+                            <option>Grains</option>
+                            <option>Fruits</option>
+                        </select>
+                        <button class="btn btn-accent">
+                            <i class="fas fa-filter"></i> Filters
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-3 gap-lg" style="padding: var(--space-xl);">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x200/ff6b6b/ffffff?text=Fresh+Tomatoes"
+                            alt="Fresh Tomatoes"
+                            style="border-radius: var(--radius-md); margin-bottom: var(--space-md); width: 100%; height: 200px; object-fit: cover;">
+                        <h4>Organic Tomatoes</h4>
+                        <p style="color: var(--color-text-light); margin: var(--space-sm) 0;">by Rajesh Kumar</p>
+                        <div class="flex justify-between items-center" style="margin: var(--space-md) 0;">
+                            <span
+                                style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">₹28/kg</span>
+                            <span class="badge badge-success">500 kg available</span>
+                        </div>
+                        <div
+                            style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
+                            <span style="color: var(--color-accent);">⭐ 4.9</span>
+                            <span style="color: var(--color-text-light);">(45 reviews)</span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-shopping-cart"></i> Place Order
+                        </button>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x200/f4c430/ffffff?text=Premium+Wheat"
+                            alt="Golden Wheat"
+                            style="border-radius: var(--radius-md); margin-bottom: var(--space-md); width: 100%; height: 200px; object-fit: cover;">
+                        <h4>Premium Wheat</h4>
+                        <p style="color: var(--color-text-light); margin: var(--space-sm) 0;">by Suresh Patel</p>
+                        <div class="flex justify-between items-center" style="margin: var(--space-md) 0;">
+                            <span
+                                style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">₹22/kg</span>
+                            <span class="badge badge-success">1200 kg available</span>
+                        </div>
+                        <div
+                            style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
+                            <span style="color: var(--color-accent);">⭐ 4.8</span>
+                            <span style="color: var(--color-text-light);">(38 reviews)</span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-shopping-cart"></i> Place Order
+                        </button>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x200/4ecdc4/ffffff?text=Mixed+Vegetables"
+                            alt="Fresh Vegetables"
+                            style="border-radius: var(--radius-md); margin-bottom: var(--space-md); width: 100%; height: 200px; object-fit: cover;">
+                        <h4>Mixed Vegetables</h4>
+                        <p style="color: var(--color-text-light); margin: var(--space-sm) 0;">by Amit Singh</p>
+                        <div class="flex justify-between items-center" style="margin: var(--space-md) 0;">
+                            <span
+                                style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">₹20/kg</span>
+                            <span class="badge badge-warning">200 kg available</span>
+                        </div>
+                        <div
+                            style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
+                            <span style="color: var(--color-accent);">⭐ 5.0</span>
+                            <span style="color: var(--color-text-light);">(62 reviews)</span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-shopping-cart"></i> Place Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="data-table mt-xl fade-in">
+                <div class="table-header">
+                    <h3>Recent Orders</h3>
+                    <button class="btn btn-accent">View All Orders</button>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Farmer</th>
+                                <th>Items</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>#ORD-2024-156</strong></td>
+                                <td>Rajesh Kumar</td>
+                                <td>Tomatoes (100kg)</td>
+                                <td>₹2,800</td>
+                                <td><span class="badge badge-info">In Transit</span></td>
+                                <td><a href="tracking.html" class="btn btn-primary"
+                                        style="padding: 0.5rem 1rem;">Track</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#ORD-2024-155</strong></td>
+                                <td>Suresh Patel</td>
+                                <td>Wheat (200kg)</td>
+                                <td>₹4,400</td>
+                                <td><span class="badge badge-success">Delivered</span></td>
+                                <td><button class="btn btn-secondary" style="padding: 0.5rem 1rem;">Review</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#ORD-2024-154</strong></td>
+                                <td>Amit Singh</td>
+                                <td>Mixed Vegetables (50kg)</td>
+                                <td>₹1,000</td>
+                                <td><span class="badge badge-success">Delivered</span></td>
+                                <td><button class="btn btn-secondary" style="padding: 0.5rem 1rem;">Review</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About AgroConnect</h4>
+                    <p style="color: rgba(255, 255, 255, 0.8);">Empowering farmers through technology and connecting
+                        them directly with markets for fair and transparent trade.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>For Farmers</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Register as Farmer</a></li>
+                        <li><a href="#">Sell Your Produce</a></li>
+                        <li><a href="#">Farmer Guidelines</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Language / भाषा</h4>
+                    <div class="language-selector">
+                        <button class="lang-btn active">English</button>
+                        <button class="lang-btn">हिंदी</button>
+                        <button class="lang-btn">मराठी</button>
+                        <button class="lang-btn">తెలుగు</button>
+                        <button class="lang-btn">தமிழ்</button>
+                        <button class="lang-btn">ગુજરાતી</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AgroConnect. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of
+                        Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

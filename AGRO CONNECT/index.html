@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AgroConnect - Connecting farmers directly with local buyers and markets for transparent and fair agricultural trade">
+    <title>AgroConnect - Agricultural Marketplace Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌱</span>
+                <span>AgroConnect</span>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a></li>
+                <li><a href="farmer-dashboard.html" class="nav-link" data-i18n="nav_farmer_dashboard">Farmer Dashboard</a></li>
+                <li><a href="buyer-dashboard.html" class="nav-link" data-i18n="nav_buyer_dashboard">Buyer Dashboard</a></li>
+                <li><a href="tracking.html" class="nav-link" data-i18n="nav_tracking">Track Orders</a></li>
+                <li><a href="login.html" class="btn btn-primary btn-sm" data-i18n="nav_signin">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HOME PAGE ===== -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text fade-in">
+                <h1 data-i18n="hero_title">Empowering Farmers Through Direct Market Access</h1>
+                <p data-i18n="hero_subtitle">Connect with buyers, discover fair prices, and grow your agricultural business with transparency
+                    and trust.</p>
+                <div class="hero-buttons">
+                    <a href="farmer-dashboard.html" class="btn btn-accent btn-lg">
+                        <i class="fas fa-seedling"></i> <span data-i18n="btn_start_farmer">Start as Farmer</span>
+                    </a>
+                    <a href="buyer-dashboard.html" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-shopping-cart"></i> <span data-i18n="btn_browse_buyer">Browse as Buyer</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="hero_farmer.png" alt="Empowered farmer using smartphone in agricultural field">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="features_title">Why Choose AgroConnect?</h2>
+                <p class="section-subtitle" data-i18n="features_subtitle">Building a transparent and fair agricultural marketplace for everyone
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat_pricing_title">Real-Time Pricing</h3>
+                    <p class="feature-description" data-i18n="feat_pricing_desc">Access live market prices and trends to make informed decisions
+                        about your crops and purchases.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat_connect_title">Direct Connection</h3>
+                    <p class="feature-description" data-i18n="feat_connect_desc">Connect farmers directly with buyers, eliminating middlemen and
+                        ensuring fair pricing for all.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat_tracking_title">Supply Chain Tracking</h3>
+                    <p class="feature-description" data-i18n="feat_tracking_desc">Track your produce from farm to market with real-time updates and
+                        transparent logistics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat_payment_title">Secure Payments</h3>
+                    <p class="feature-description" data-i18n="feat_payment_desc">Safe and secure payment processing with multiple payment options
+                        for your convenience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat_lang_title">Multi-Language Support</h3>
+                    <p class="feature-description" data-i18n="feat_lang_desc">Access the platform in your preferred language with simple,
+                        rural-friendly interface.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat_verified_title">Verified Farmers</h3>
+                    <p class="feature-description" data-i18n="feat_verified_desc">All farmers are verified and rated, building trust and ensuring
+                        quality produce.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="features" style="background-color: var(--color-bg-cream);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="how_title">How It Works</h2>
+                <p class="section-subtitle" data-i18n="how_subtitle">Simple steps to connect and trade</p>
+            </div>
+            <div class="grid grid-3 gap-xl">
+                <div class="card text-center">
+                    <div class="feature-icon" style="margin: 0 auto var(--space-lg);">
+                        <span style="font-size: 2rem;">1</span>
+                    </div>
+                    <h4 class="mb-md" data-i18n="step1_title">Register & Verify</h4>
+                    <p data-i18n="step1_desc">Create your account as a farmer or buyer and complete simple verification process.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="feature-icon" style="margin: 0 auto var(--space-lg);">
+                        <span style="font-size: 2rem;">2</span>
+                    </div>
+                    <h4 class="mb-md" data-i18n="step2_title">List or Browse</h4>
+                    <p data-i18n="step2_desc">Farmers list their crops with prices, buyers browse available produce from verified farmers.
+                    </p>
+                </div>
+                <div class="card text-center">
+                    <div class="feature-icon" style="margin: 0 auto var(--space-lg);">
+                        <span style="font-size: 2rem;">3</span>
+                    </div>
+                    <h4 class="mb-md" data-i18n="step3_title">Connect & Trade</h4>
+                    <p data-i18n="step3_desc">Negotiate fair prices, place orders, and track delivery with complete transparency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="features">
+        <div class="container">
+            <div class="grid grid-4 gap-xl stats-grid">
+                <div class="stat-card" style="border-left-color: var(--color-accent);">
+                    <div class="stat-value">10,000+</div>
+                    <div class="stat-label" data-i18n="stat_farmers">Verified Farmers</div>
+                </div>
+                <div class="stat-card" style="border-left-color: var(--color-success);">
+                    <div class="stat-value">₹50Cr+</div>
+                    <div class="stat-label" data-i18n="stat_transactions">Total Transactions</div>
+                </div>
+                <div class="stat-card" style="border-left-color: var(--color-info);">
+                    <div class="stat-value">5,000+</div>
+                    <div class="stat-label" data-i18n="stat_buyers">Active Buyers</div>
+                </div>
+                <div class="stat-card" style="border-left-color: var(--color-warning);">
+                    <div class="stat-value">4.8/5</div>
+                    <div class="stat-label" data-i18n="stat_rating">Average Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About AgroConnect</h4>
+                    <p style="color: rgba(255, 255, 255, 0.8);" data-i18n="footer_about_desc">Empowering farmers through technology and connecting
+                        them directly with markets for fair and transparent trade.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="footer_links">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-i18n="link_about">About Us</a></li>
+                        <li><a href="#" data-i18n="how_title">How It Works</a></li>
+                        <li><a href="#" data-i18n="link_pricing">Pricing</a></li>
+                        <li><a href="#" data-i18n="link_contact">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="footer_farmers">For Farmers</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-i18n="link_register_farmer">Register as Farmer</a></li>
+                        <li><a href="#" data-i18n="link_sell">Sell Your Produce</a></li>
+                        <li><a href="#" data-i18n="link_guidelines">Farmer Guidelines</a></li>
+                        <li><a href="#" data-i18n="link_stories">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Language / भाषा / மொழி</h4>
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">English</button>
+                        <button class="lang-btn" data-lang="hi">हिंदी</button>
+                        <button class="lang-btn" data-lang="mr">मराठी</button>
+                        <button class="lang-btn" data-lang="te">తెలుగు</button>
+                        <button class="lang-btn" data-lang="ta">தமிழ்</button>
+                        <button class="lang-btn" data-lang="gu">ગુજરાતી</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AgroConnect. All rights reserved. | <a href="#" data-i18n="privacy">Privacy Policy</a> | <a href="#" data-i18n="terms">Terms of
+                        Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

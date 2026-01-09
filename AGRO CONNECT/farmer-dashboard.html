@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Farmer Dashboard - Manage your crops, orders, and sales on AgroConnect">
+    <title>Farmer Dashboard - AgroConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌱</span>
+                <span>AgroConnect</span>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="farmer-dashboard.html" class="nav-link active">Farmer Dashboard</a></li>
+                <li><a href="buyer-dashboard.html" class="nav-link">Buyer Dashboard</a></li>
+                <li><a href="tracking.html" class="nav-link">Track Orders</a></li>
+                <li><a href="login.html" class="btn btn-primary btn-sm">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== FARMER DASHBOARD ===== -->
+    <div class="page dashboard active">
+        <aside class="sidebar slide-in">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🌱</span>
+                    <span>AgroConnect</span>
+                </div>
+                <span class="user-role">Farmer</span>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="#" class="sidebar-link active"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-seedling"></i> My Crops</a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-chart-line"></i> Market Prices</a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-money-bill-wave"></i> Earnings</a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-bell"></i> Notifications</a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="index.html" class="sidebar-link"><i class="fas fa-home"></i> Back to Home</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header fade-in">
+                <h1 class="dashboard-title">Farmer Dashboard</h1>
+                <p>Welcome back, Rajesh Kumar! Here's your farm overview.</p>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-grid fade-in">
+                <div class="stat-card">
+                    <div class="stat-label">Total Crops Listed</div>
+                    <div class="stat-value">12</div>
+                    <div class="stat-trend"><i class="fas fa-arrow-up"></i> 2 new this week</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Active Orders</div>
+                    <div class="stat-value">8</div>
+                    <div class="stat-trend"><i class="fas fa-arrow-up"></i> 3 pending</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">This Month Earnings</div>
+                    <div class="stat-value">₹45,600</div>
+                    <div class="stat-trend"><i class="fas fa-arrow-up"></i> +12% vs last month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Farmer Rating</div>
+                    <div class="stat-value">4.9 ⭐</div>
+                    <div class="stat-trend">Based on 156 reviews</div>
+                </div>
+            </div>
+
+            <!-- Current Market Prices -->
+            <div class="data-table mt-xl fade-in">
+                <div class="table-header">
+                    <h3>Current Market Prices</h3>
+                    <button class="btn btn-accent">
+                        <i class="fas fa-sync"></i> Refresh Prices
+                    </button>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Crop Name</th>
+                                <th>Current Price</th>
+                                <th>Price Change</th>
+                                <th>Demand Level</th>
+                                <th>Your Stock</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tomatoes</strong></td>
+                                <td>₹25/kg</td>
+                                <td style="color: var(--color-success);"><i class="fas fa-arrow-up"></i> +8%</td>
+                                <td><span class="badge badge-success">High</span></td>
+                                <td>500 kg</td>
+                                <td><button class="btn btn-primary" style="padding: 0.5rem 1rem;">List Now</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wheat</strong></td>
+                                <td>₹22/kg</td>
+                                <td style="color: var(--color-error);"><i class="fas fa-arrow-down"></i> -3%</td>
+                                <td><span class="badge badge-warning">Medium</span></td>
+                                <td>1200 kg</td>
+                                <td><button class="btn btn-primary" style="padding: 0.5rem 1rem;">List Now</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rice</strong></td>
+                                <td>₹35/kg</td>
+                                <td style="color: var(--color-success);"><i class="fas fa-arrow-up"></i> +5%</td>
+                                <td><span class="badge badge-success">High</span></td>
+                                <td>800 kg</td>
+                                <td><button class="btn btn-primary" style="padding: 0.5rem 1rem;">List Now</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Potatoes</strong></td>
+                                <td>₹18/kg</td>
+                                <td style="color: var(--color-success);"><i class="fas fa-arrow-up"></i> +2%</td>
+                                <td><span class="badge badge-info">Stable</span></td>
+                                <td>600 kg</td>
+                                <td><button class="btn btn-primary" style="padding: 0.5rem 1rem;">List Now</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- My Crop Listings -->
+            <div class="data-table mt-xl fade-in">
+                <div class="table-header">
+                    <h3>My Crop Listings</h3>
+                    <button class="btn btn-accent" onclick="openAddCropModal()">
+                        <i class="fas fa-plus"></i> Add New Crop
+                    </button>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Crop</th>
+                                <th>Quantity</th>
+                                <th>Price/kg</th>
+                                <th>Status</th>
+                                <th>Views</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Organic Tomatoes</strong></td>
+                                <td>500 kg</td>
+                                <td>₹28/kg</td>
+                                <td><span class="badge badge-success">Active</span></td>
+                                <td>124</td>
+                                <td>
+                                    <button class="btn btn-secondary"
+                                        style="padding: 0.5rem 1rem; margin-right: 0.5rem;">Edit</button>
+                                    <button class="btn"
+                                        style="padding: 0.5rem 1rem; background: var(--color-error); color: white;">Remove</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fresh Carrots</strong></td>
+                                <td>300 kg</td>
+                                <td>₹20/kg</td>
+                                <td><span class="badge badge-success">Active</span></td>
+                                <td>89</td>
+                                <td>
+                                    <button class="btn btn-secondary"
+                                        style="padding: 0.5rem 1rem; margin-right: 0.5rem;">Edit</button>
+                                    <button class="btn"
+                                        style="padding: 0.5rem 1rem; background: var(--color-error); color: white;">Remove</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Basmati Rice</strong></td>
+                                <td>800 kg</td>
+                                <td>₹38/kg</td>
+                                <td><span class="badge badge-warning">Pending Approval</span></td>
+                                <td>12</td>
+                                <td>
+                                    <button class="btn btn-secondary"
+                                        style="padding: 0.5rem 1rem; margin-right: 0.5rem;">Edit</button>
+                                    <button class="btn"
+                                        style="padding: 0.5rem 1rem; background: var(--color-error); color: white;">Remove</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== ADD CROP MODAL ===== -->
+    <div id="addCropModal" class="modal">
+        <div class="modal-content" style="max-width: 700px;">
+            <div class="modal-header">
+                <h2><i class="fas fa-seedling"></i> Add New Crop</h2>
+                <button class="modal-close" onclick="closeAddCropModal()">&times;</button>
+            </div>
+
+            <form id="addCropForm" onsubmit="handleAddCrop(event)">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
+                    <!-- Left Column -->
+                    <div>
+                        <div class="form-group" style="margin-bottom: var(--space-lg);">
+                            <label for="cropName"
+                                style="display: block; margin-bottom: var(--space-sm); font-weight: 600;">
+                                Crop Name <span style="color: var(--color-error);">*</span>
+                            </label>
+                            <input type="text" id="cropName" class="form-input" placeholder="e.g., Organic Tomatoes"
+                                style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-bg-light); border-radius: var(--radius-md);"
+                                required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: var(--space-lg);">
+                            <label for="cropCategory"
+                                style="display: block; margin-bottom: var(--space-sm); font-weight: 600;">
+                                Category <span style="color: var(--color-error);">*</span>
+                            </label>
+                            <select id="cropCategory" class="form-select"
+                                style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-bg-light); border-radius: var(--radius-md);"
+                                required>
+                                <option value="">Select category</option>
+                                <option value="vegetables">Vegetables</option>
+                                <option value="fruits">Fruits</option>
+                                <option value="grains">Grains</option>
+                                <option value="pulses">Pulses</option>
+                                <option value="spices">Spices</option>
+                                <option value="dairy">Dairy</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: var(--space-lg);">
+                            <label for="cropPrice"
+                                style="display: block; margin-bottom: var(--space-sm); font-weight: 600;">
+                                Price per Unit (₹) <span style="color: var(--color-error);">*</span>
+                            </label>
+                            <input type="number" id="cropPrice" class="form-input" placeholder="25" min="1" step="0.01"
+                                style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-bg-light); border-radius: var(--radius-md);"
+                                required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: var(--space-lg);">
+                            <label for="cropUnit"
+                                style="display: block; margin-bottom: var(--space-sm); font-weight: 600;">
+                                Unit <span style="color: var(--color-error);">*</span>
+                            </label>
+                            <select id="cropUnit" class="form-select"
+                                style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-bg-light); border-radius: var(--radius-md);"
+                                required>
+                                <option value="kg">Kilogram (kg)</option>
+                                <option value="quintal">Quintal</option>
+                                <option value="ton">Ton</option>
+                                <option value="piece">Piece</option>
+                                <option value="dozen">Dozen</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div>
+                        <div class="form-group" style="margin-bottom: var(--space-lg);">
+                            <label for="cropQuantity"
+                                style="display: block; margin-bottom: var(--space-sm); font-weight: 600;">
+                                Available Quantity <span style="color: var(--color-error);">*</span>
+                            </label>
+                            <input type="number" id="cropQuantity" class="form-input" placeholder="500" min="1"
+                                style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-bg-light); border-radius: var(--radius-md);"
+                                required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: var(--space-lg);">
+                            <label for="cropMinOrder"
+                                style="display: block; margin-bottom: var(--space-sm); font-weight: 600;">
+                                Minimum Order <span style="color: var(--color-error);">*</span>
+                            </label>
+                            <input type="number" id="cropMinOrder" class="form-input" placeholder="10" min="1" value="1"
+                                style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-bg-light); border-radius: var(--radius-md);"
+                                required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: var(--space-lg);">
+                            <label for="cropQuality"
+                                style="display: block; margin-bottom: var(--space-sm); font-weight: 600;">
+                                Quality Grade
+                            </label>
+                            <select id="cropQuality" class="form-select"
+                                style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-bg-light); border-radius: var(--radius-md);">
+                                <option value="A">Grade A</option>
+                                <option value="B" selected>Grade B</option>
+                                <option value="C">Grade C</option>
+                                <option value="organic">Organic</option>
+                                <option value="premium">Premium</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: var(--space-lg);">
+                            <label style="display: flex; align-items: center; gap: var(--space-sm); cursor: pointer;">
+                                <input type="checkbox" id="cropIsOrganic"
+                                    style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-weight: 600;">Organic Certified</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Width Fields -->
+                <div class="form-group" style="margin-bottom: var(--space-lg);">
+                    <label for="cropDescription"
+                        style="display: block; margin-bottom: var(--space-sm); font-weight: 600;">
+                        Description <span style="color: var(--color-error);">*</span>
+                    </label>
+                    <textarea id="cropDescription" class="form-input" rows="3"
+                        placeholder="Describe your crop, growing methods, quality, etc."
+                        style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-bg-light); border-radius: var(--radius-md); resize: vertical;"
+                        required></textarea>
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin-bottom: var(--space-xl);">
+                    <div class="form-group">
+                        <label for="cropCity" style="display: block; margin-bottom: var(--space-sm); font-weight: 600;">
+                            City <span style="color: var(--color-error);">*</span>
+                        </label>
+                        <input type="text" id="cropCity" class="form-input" placeholder="e.g., Nashik"
+                            style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-bg-light); border-radius: var(--radius-md);"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cropState"
+                            style="display: block; margin-bottom: var(--space-sm); font-weight: 600;">
+                            State <span style="color: var(--color-error);">*</span>
+                        </label>
+                        <input type="text" id="cropState" class="form-input" placeholder="e.g., Maharashtra"
+                            style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-bg-light); border-radius: var(--radius-md);"
+                            required>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div style="display: flex; gap: var(--space-md); justify-content: flex-end;">
+                    <button type="button" class="btn btn-secondary" onclick="closeAddCropModal()">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                    <button type="submit" class="btn btn-accent" id="submitCropBtn">
+                        <i class="fas fa-check"></i> Add Crop
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 2rem;
+            padding: 0;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-xl);
+            border-bottom: 2px solid var(--color-bg-light);
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            color: var(--color-primary);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--color-text-light);
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--color-error);
+        }
+
+        .modal-content form {
+            padding: var(--space-xl);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Form Input Focus */
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+        }
+    </style>
+
+    <script>
+        // Open Add Crop Modal
+        function openAddCropModal() {
+            document.getElementById('addCropModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        // Close Add Crop Modal
+        function closeAddCropModal() {
+            document.getElementById('addCropModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            document.getElementById('addCropForm').reset();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('addCropModal');
+            if (event.target == modal) {
+                closeAddCropModal();
+            }
+        }
+
+        // Handle Add Crop Form Submission
+        async function handleAddCrop(event) {
+            event.preventDefault();
+
+            const submitBtn = document.getElementById('submitCropBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Adding...';
+
+            // Get form data
+            const cropData = {
+                name: document.getElementById('cropName').value,
+                category: document.getElementById('cropCategory').value,
+                description: document.getElementById('cropDescription').value,
+                price: parseFloat(document.getElementById('cropPrice').value),
+                unit: document.getElementById('cropUnit').value,
+                quantity: parseInt(document.getElementById('cropQuantity').value),
+                minOrder: parseInt(document.getElementById('cropMinOrder').value),
+                quality: document.getElementById('cropQuality').value,
+                isOrganic: document.getElementById('cropIsOrganic').checked,
+                location: {
+                    city: document.getElementById('cropCity').value,
+                    state: document.getElementById('cropState').value
+                },
+                status: 'active'
+            };
+
+            try {
+                // Get token from localStorage
+                const token = localStorage.getItem('token');
+
+                if (!token) {
+                    alert('Please login first to add crops');
+                    window.location.href = 'login.html';
+                    return;
+                }
+
+                // Call backend API
+                const response = await fetch('http://localhost:5000/api/products', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(cropData)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Success!
+                    alert(`✅ ${cropData.name} added successfully!`);
+                    closeAddCropModal();
+
+                    // Optionally reload the page to show the new crop
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000);
+                } else {
+                    alert('❌ Error: ' + (data.message || 'Failed to add crop'));
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('❌ Error adding crop. Make sure the backend server is running.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Add Crop';
+            }
+        }
+    </script>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About AgroConnect</h4>
+                    <p style="color: rgba(255, 255, 255, 0.8);">Empowering farmers through technology and connecting
+                        them directly with markets for fair and transparent trade.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>For Farmers</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Register as Farmer</a></li>
+                        <li><a href="#">Sell Your Produce</a></li>
+                        <li><a href="#">Farmer Guidelines</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Language / भाषा</h4>
+                    <div class="language-selector">
+                        <button class="lang-btn active">English</button>
+                        <button class="lang-btn">हिंदी</button>
+                        <button class="lang-btn">मराठी</button>
+                        <button class="lang-btn">తెలుగు</button>
+                        <button class="lang-btn">தமிழ்</button>
+                        <button class="lang-btn">ગુજરાતી</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AgroConnect. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of
+                        Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
